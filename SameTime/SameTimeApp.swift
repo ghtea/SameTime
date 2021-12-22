@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct SameTimeApp: App {
+    @StateObject private var viewRouter = ViewRouter()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environmentObject(viewRouter)
         }
     }
 }

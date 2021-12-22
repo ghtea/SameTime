@@ -7,20 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7342783027737932008AA336 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7342782F27737932008AA336 /* ViewRouter.swift */; };
 		73CACE4527736F1E00D3187F /* SameTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CACE4427736F1E00D3187F /* SameTimeApp.swift */; };
-		73CACE4727736F1E00D3187F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CACE4627736F1E00D3187F /* ContentView.swift */; };
+		73CACE4727736F1E00D3187F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CACE4627736F1E00D3187F /* RootView.swift */; };
 		73CACE4927736F1F00D3187F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73CACE4827736F1F00D3187F /* Assets.xcassets */; };
 		73CACE4C27736F1F00D3187F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73CACE4B27736F1F00D3187F /* Preview Assets.xcassets */; };
 		73CACE5327736F7100D3187F /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 73CACE5227736F7100D3187F /* swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7342782F27737932008AA336 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		73CACE4127736F1E00D3187F /* SameTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SameTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73CACE4427736F1E00D3187F /* SameTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SameTimeApp.swift; sourceTree = "<group>"; };
-		73CACE4627736F1E00D3187F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		73CACE4627736F1E00D3187F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		73CACE4827736F1F00D3187F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73CACE4B27736F1F00D3187F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		73CACE5227736F7100D3187F /* swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftlint.yml; sourceTree = "<group>"; };
+		73CACE5C277371F600D3187F /* CalendarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarScreen.swift; sourceTree = "<group>"; };
+		73CACE5D277371F600D3187F /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		73CACE5E277371F600D3187F /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		73CACE5F2773735B00D3187F /* PlanScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanScreen.swift; sourceTree = "<group>"; };
+		73CACE612773751500D3187F /* TabBarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIcon.swift; sourceTree = "<group>"; };
+		73CACE62277376B700D3187F /* TabBarAddIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAddIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +62,13 @@
 		73CACE4327736F1E00D3187F /* SameTime */ = {
 			isa = PBXGroup;
 			children = (
+				73CACE5B2773714700D3187F /* Views */,
+				73CACE5A2773713D00D3187F /* Utils */,
+				73CACE592773712C00D3187F /* Models */,
+				73CACE582773712400D3187F /* ViewModels */,
+				73CACE572773711E00D3187F /* Screens */,
 				73CACE4427736F1E00D3187F /* SameTimeApp.swift */,
-				73CACE4627736F1E00D3187F /* ContentView.swift */,
+				73CACE4627736F1E00D3187F /* RootView.swift */,
 				73CACE4827736F1F00D3187F /* Assets.xcassets */,
 				73CACE4A27736F1F00D3187F /* Preview Content */,
 			);
@@ -68,6 +81,48 @@
 				73CACE4B27736F1F00D3187F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		73CACE572773711E00D3187F /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				73CACE5C277371F600D3187F /* CalendarScreen.swift */,
+				73CACE5F2773735B00D3187F /* PlanScreen.swift */,
+				73CACE5D277371F600D3187F /* HomeScreen.swift */,
+				73CACE5E277371F600D3187F /* SettingsScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		73CACE582773712400D3187F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7342782F27737932008AA336 /* ViewRouter.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		73CACE592773712C00D3187F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		73CACE5A2773713D00D3187F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		73CACE5B2773714700D3187F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				73CACE62277376B700D3187F /* TabBarAddIcon.swift */,
+				73CACE612773751500D3187F /* TabBarIcon.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +218,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73CACE4727736F1E00D3187F /* ContentView.swift in Sources */,
+				73CACE4727736F1E00D3187F /* RootView.swift in Sources */,
+				7342783027737932008AA336 /* ViewRouter.swift in Sources */,
 				73CACE4527736F1E00D3187F /* SameTimeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
