@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct TabBarAddIcon: View {
+    @State private var isOpenDialog = false
+
+    func onDismiss () {
+        isOpenDialog = false
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -18,6 +23,10 @@ struct TabBarAddIcon: View {
         .foregroundColor(Color("TabBarIcon"))
         .onTapGesture {
             print("add!!!")
+            isOpenDialog = true
+        }
+        .sheet(isPresented: $isOpenDialog, onDismiss: onDismiss) {
+            SheetCreateEvent(isOpenSheet: $isOpenDialog)
         }
     }
 }

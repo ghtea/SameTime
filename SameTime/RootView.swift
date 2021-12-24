@@ -19,6 +19,7 @@ struct RootView: View {
     }
 
     var body: some View {
+
         GeometryReader { geometry in
             ZStack {
                 // Screen
@@ -26,8 +27,10 @@ struct RootView: View {
                     switch viewRouter.currentPageId {
                     case .home :
                         HomeScreen()
-                    case .goals:
-                        GoalsScreen()
+                    case .calendar:
+                        CalendarScreen()
+                    case .plan:
+                        PlanScreen()
                     case .settings:
                         SettingsScreen()
                     }
