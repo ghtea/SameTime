@@ -1,5 +1,5 @@
 //
-//  CalendarScreen.swift
+//  ScheduleScreen.swift
 //  SameTime
 //
 //  Created by wiz on 2021/12/22.
@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct CalendarScreen: View {
+struct ScheduleScreen: View {
     var body: some View {
         NavigationView {
-            Text("Goals")
-                .navigationTitle("Goals")
+            Text("Schedule")
+                .navigationTitle("Schedule")
                 .navigationBarTitleDisplayMode(.inline)
         }
 
     }
 }
 
-struct CalendarScreen_Previews: PreviewProvider {
+struct ScheduleScreen_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarScreen()
+        ScheduleScreen()
     }
 }

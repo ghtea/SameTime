@@ -28,9 +28,9 @@ struct RootView: View {
                     case .home :
                         HomeScreen()
                     case .calendar:
-                        CalendarScreen()
+                        ScheduleScreen()
                     case .plan:
-                        PlanScreen()
+                        TasksScreen()
                     case .settings:
                         SettingsScreen()
                     }
@@ -44,32 +44,29 @@ struct RootView: View {
                             iconSystemName: "heart.fill",
                             tabId: .home,
                             isSelected: viewRouter.currentPageId == .home
-                        )
-                        Spacer()
+                        ).frame(maxWidth: .infinity)
                         TabBarIcon(
-                            title: "Calendar",
+                            title: "Schedule",
                             iconSystemName: "calendar",
                             tabId: .calendar,
                             isSelected: viewRouter.currentPageId == .calendar
-                        )
-                        Spacer()
-                        Group {
-                            TabBarAddIcon()
-                        }
-                        Spacer()
+                        ).frame(maxWidth: .infinity)
+//                        Spacer()
+//                        Group {
+//                            TabBarAddIcon()
+//                        }
                         TabBarIcon(
-                            title: "Plan",
-                            iconSystemName: "chart.bar.fill",
+                            title: "Tasks",
+                            iconSystemName: "list.bullet",
                             tabId: .plan,
                             isSelected: viewRouter.currentPageId == .plan
-                        )
-                        Spacer()
+                        ).frame(maxWidth: .infinity)
                         TabBarIcon(
                             title: "Settings",
                             iconSystemName: "gearshape.fill",
                             tabId: .settings,
                             isSelected: viewRouter.currentPageId == .settings
-                        )
+                        ).frame(maxWidth: .infinity)
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 4)
@@ -86,5 +83,6 @@ struct RootView: View {
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
         RootView()
+            .environmentObject(ViewRouter())
     }
 }

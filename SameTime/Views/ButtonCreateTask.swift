@@ -1,13 +1,13 @@
 //
-//  TabBarAddIcon.swift
+//  ButtonCreateTask.swift
 //  SameTime
 //
-//  Created by wiz on 2021/12/22.
+//  Created by wiz on 2021/12/25.
 //
 
 import SwiftUI
 
-struct TabBarAddIcon: View {
+struct ButtonCreateTask: View {
     @State private var isOpenDialog = false
 
     func onDismiss () {
@@ -15,14 +15,15 @@ struct TabBarAddIcon: View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
-            Image(systemName: "plus.app")
-            .font(.system(size: 36))
-            .frame(width: 32, height: 32)
+        HStack {
+            Image(systemName: "plus.circle")
+            .font(.system(size: 28))
+            // .frame(width: 32, height: 32)
+            Text("Add Task")
+                .font(.system(size: 24))
         }
-        .foregroundColor(Color("TabBarIcon"))
+        .foregroundColor(Color("Primary"))
         .onTapGesture {
-            print("add!!!")
             isOpenDialog = true
         }
         .sheet(isPresented: $isOpenDialog, onDismiss: onDismiss) {
@@ -31,8 +32,8 @@ struct TabBarAddIcon: View {
     }
 }
 
-struct TabBarAddIcon_Previews: PreviewProvider {
+struct ButtonCreateTask_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarAddIcon()
+        ButtonCreateTask()
     }
 }

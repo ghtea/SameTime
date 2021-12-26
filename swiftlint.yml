@@ -1,7 +1,8 @@
 disabled_rules:
 - line_length
 - trailing_whitespace
+- function_parameter_count
 
 included:
 excluded:
-- Pods
+
