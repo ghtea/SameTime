@@ -14,7 +14,7 @@ struct SettingsScreen: View {
             Text("Settings")
                 .navigationTitle("Settings")
                 .navigationBarTitleDisplayMode(.inline)
-        }
+        }.navigationViewStyle(.stack)
     }
 }
 

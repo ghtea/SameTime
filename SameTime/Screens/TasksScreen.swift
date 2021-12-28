@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct TasksScreen: View {
+    @EnvironmentObject private var layout: Layout
+
     let tasks = dummyTasks
 
     var body: some View {
         NavigationView {
             ZStack {
                 VStack {
-                    ForEach(tasks) { task in
-                        Text("\(task.title)")
+                    List(tasks) { task in
+                        ListItemTask(task: task)
                     }
                 }
                 VStack {
@@ -26,10 +28,11 @@ struct TasksScreen: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
                 .padding(.leading, 16)
                 .padding(.bottom, 8)
+                .padding(.bottom, layout.tabBarHeight)
             }
-                .navigationTitle("Tasks")
-                .navigationBarTitleDisplayMode(.inline)
-        }
+            .navigationTitle("Tasks")
+            .navigationBarTitleDisplayMode(.inline)
+        }.navigationViewStyle(.stack)
 
     }
 }
@@ -37,5 +40,6 @@ struct TasksScreen: View {
 struct TasksScreen_Previews: PreviewProvider {
     static var previews: some View {
         TasksScreen()
+            .environmentObject(Layout())
     }
 }

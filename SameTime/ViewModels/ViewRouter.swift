@@ -14,6 +14,6 @@ class ViewRouter: ObservableObject {
 enum PageId {
     case home
     case calendar
-    case plan
+    case tasks
     case settings
 }

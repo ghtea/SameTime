@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73809FFE277B39EE00465CBA /* SheetPageAddTaskNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73809FFD277B39EE00465CBA /* SheetPageAddTaskNotification.swift */; };
 		739284E6277702BE00CC045A /* SheetAddTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739284E5277702BE00CC045A /* SheetAddTask.swift */; };
 		739284E827770A6E00CC045A /* StateBindingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739284E727770A6E00CC045A /* StateBindingViewModel.swift */; };
 		739284EA2777204700CC045A /* ListItemTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739284E92777204700CC045A /* ListItemTask.swift */; };
@@ -25,9 +26,13 @@
 		73CACE4727736F1E00D3187F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CACE4627736F1E00D3187F /* RootView.swift */; };
 		73CACE4927736F1F00D3187F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73CACE4827736F1F00D3187F /* Assets.xcassets */; };
 		73CACE4C27736F1F00D3187F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73CACE4B27736F1F00D3187F /* Preview Assets.xcassets */; };
+		73D279C027799F4300449E26 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D279BF27799F4300449E26 /* Layout.swift */; };
+		73D279C2277B1B5F00449E26 /* SizeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D279C1277B1B5F00449E26 /* SizeModifier.swift */; };
+		73D279C5277B2D1A00449E26 /* DatePickerCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D279C3277B2A3100449E26 /* DatePickerCustom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		73809FFD277B39EE00465CBA /* SheetPageAddTaskNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPageAddTaskNotification.swift; sourceTree = "<group>"; };
 		739284E5277702BE00CC045A /* SheetAddTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAddTask.swift; sourceTree = "<group>"; };
 		739284E727770A6E00CC045A /* StateBindingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateBindingViewModel.swift; sourceTree = "<group>"; };
 		739284E92777204700CC045A /* ListItemTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTask.swift; sourceTree = "<group>"; };
@@ -47,6 +52,9 @@
 		73CACE5E277371F600D3187F /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		73CACE5F2773735B00D3187F /* TasksScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksScreen.swift; sourceTree = "<group>"; };
 		73CACE62277376B700D3187F /* TabBarAddIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAddIcon.swift; sourceTree = "<group>"; };
+		73D279BF27799F4300449E26 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		73D279C1277B1B5F00449E26 /* SizeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeModifier.swift; sourceTree = "<group>"; };
+		73D279C3277B2A3100449E26 /* DatePickerCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCustom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,7 @@
 				739F9A132775F2370014BD66 /* ViewRouter.swift */,
 				739284E727770A6E00CC045A /* StateBindingViewModel.swift */,
 				739284EF2778422100CC045A /* NotificationManager.swift */,
+				73D279BF27799F4300449E26 /* Layout.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -133,6 +142,7 @@
 		73CACE5A2773713D00D3187F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				73D279C1277B1B5F00449E26 /* SizeModifier.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -145,6 +155,8 @@
 				73B102542776A6D500B59FDC /* ButtonCreateTask.swift */,
 				739284E5277702BE00CC045A /* SheetAddTask.swift */,
 				739284E92777204700CC045A /* ListItemTask.swift */,
+				73D279C3277B2A3100449E26 /* DatePickerCustom.swift */,
+				73809FFD277B39EE00465CBA /* SheetPageAddTaskNotification.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,7 +245,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# https://www.anotheriosdevblog.com/installing-swiftlint-on-a-m1/\nif test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint --fix && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# https://www.anotheriosdevblog.com/installing-swiftlint-on-a-m1/\nif test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint --fix # && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -243,9 +255,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				739F9A162775F5980014BD66 /* HomeScreen.swift in Sources */,
+				73D279C027799F4300449E26 /* Layout.swift in Sources */,
+				73809FFE277B39EE00465CBA /* SheetPageAddTaskNotification.swift in Sources */,
+				73D279C5277B2D1A00449E26 /* DatePickerCustom.swift in Sources */,
 				739284F02778422100CC045A /* NotificationManager.swift in Sources */,
 				739F9A192775F59F0014BD66 /* SettingsScreen.swift in Sources */,
 				739F9A182775F59D0014BD66 /* ScheduleScreen.swift in Sources */,
+				73D279C2277B1B5F00449E26 /* SizeModifier.swift in Sources */,
 				73B102572776B41B00B59FDC /* Task.swift in Sources */,
 				739F9A1B2775F5A50014BD66 /* TabBarIcon.swift in Sources */,
 				73CACE4727736F1E00D3187F /* RootView.swift in Sources */,

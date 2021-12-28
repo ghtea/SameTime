@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RootView: View {
     @EnvironmentObject private var viewRouter: ViewRouter
+    @EnvironmentObject private var layout: Layout
 
     init() {
         let appearance = UINavigationBarAppearance()
@@ -20,7 +21,7 @@ struct RootView: View {
 
     var body: some View {
 
-        GeometryReader { geometry in
+        GeometryReader { screenGeometry in
             ZStack {
                 // Screen
                 Group {
@@ -29,7 +30,7 @@ struct RootView: View {
                         HomeScreen()
                     case .calendar:
                         ScheduleScreen()
-                    case .plan:
+                    case .tasks:
                         TasksScreen()
                     case .settings:
                         SettingsScreen()
@@ -37,7 +38,9 @@ struct RootView: View {
                 }
 
                 // TabBar
-                Group {
+                VStack {
+                    Spacer()
+                    // GeometryReader { tabBarGeometry in
                     HStack {
                         TabBarIcon(
                             title: "Home",
@@ -51,15 +54,11 @@ struct RootView: View {
                             tabId: .calendar,
                             isSelected: viewRouter.currentPageId == .calendar
                         ).frame(maxWidth: .infinity)
-//                        Spacer()
-//                        Group {
-//                            TabBarAddIcon()
-//                        }
                         TabBarIcon(
                             title: "Tasks",
                             iconSystemName: "list.bullet",
-                            tabId: .plan,
-                            isSelected: viewRouter.currentPageId == .plan
+                            tabId: .tasks,
+                            isSelected: viewRouter.currentPageId == .tasks
                         ).frame(maxWidth: .infinity)
                         TabBarIcon(
                             title: "Settings",
@@ -67,15 +66,31 @@ struct RootView: View {
                             tabId: .settings,
                             isSelected: viewRouter.currentPageId == .settings
                         ).frame(maxWidth: .infinity)
+
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 4)
-                    .frame(width: geometry.size.width)
                     .background(.ultraThinMaterial)
-                }
-                .frame(width: geometry.size.width, height: geometry.size.height, alignment: .bottom)
+                    .frame(width: screenGeometry.size.width)
+                    .modifier(SizeModifier())
+                    .onPreferenceChange(SizePreferenceKey.self) { size in
+                        layout.setTabBarHeight(value: size.height)
+                    }
+//                    .background(
+//                        GeometryReader { tabBarGeometry in
+//                            Color.clear
+//                                .onAppear {
+//                                    layout.setTabBarHeight(value: tabBarGeometry.size.height)
+//                                    print(tabBarGeometry.size.height)
+//                                }
+//                        }
+//                    )
 
-            }.frame(width: geometry.size.width)
+                    // }
+
+                }.frame(alignment: .bottom)
+            }.frame(width: screenGeometry.size.width)
+
         }
     }
 }
@@ -84,5 +99,6 @@ struct RootView_Previews: PreviewProvider {
     static var previews: some View {
         RootView()
             .environmentObject(ViewRouter())
+            .environmentObject(Layout())
     }
 }

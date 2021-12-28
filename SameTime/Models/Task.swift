@@ -15,12 +15,15 @@ struct Task: Identifiable {
     var color: String?
 
     var notifications: [TaskNotification]
+    var defaultHour: Int?
+    var defaultMinute: Int?
 
     var shouldCheck: Bool
 }
 
 struct TaskNotification {
-    var requestId: String = UUID().uuidString
+    var id: String = UUID().uuidString
+    var requestId: String?
     var title: String
     var year: Int?
     var month: Int?

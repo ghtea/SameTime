@@ -13,7 +13,7 @@ struct ScheduleScreen: View {
             Text("Schedule")
                 .navigationTitle("Schedule")
                 .navigationBarTitleDisplayMode(.inline)
-        }
+        }.navigationViewStyle(.stack)
 
     }
 }
