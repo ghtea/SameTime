@@ -64,13 +64,10 @@ struct SheetAddTask: View {
 
                     Text("\(defaultTimeText(defaultTime))")
 
-                    GeometryReader { weekRowGeometry in
+                    ScrollView(.horizontal) {
                         HStack {
-                            ForEach(["M", "T", "W", "Thu", "F", "S", "Sun"], id: \.self) { // TODO: resolve
-                                Text("\($0)")
-                                    .frame(height: 48)
-                                    .frame(maxWidth: weekRowGeometry.size.width / 7)
-                                    .background(Color.gray)
+                            ForEach(["all", "MON", "TUE", "WED", "THE", "FRI", "SAT", "SUN"], id: \.self) { item in
+                                ColumnDaySchedule(title: item, notifications: [])
                             }
                         }
                     }
