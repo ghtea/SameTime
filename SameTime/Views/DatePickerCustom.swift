@@ -23,6 +23,7 @@ struct DatePickerCustom: View {
                 .pickerStyle(.wheel)
                 .frame(maxWidth: geometry.size.width / 2)
                 .frame(height: 160)
+                .compositingGroup()
                 .clipped()
 
                 Picker("", selection: $minute) {

@@ -29,7 +29,7 @@
 		73D279C027799F4300449E26 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D279BF27799F4300449E26 /* Layout.swift */; };
 		73D279C2277B1B5F00449E26 /* SizeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D279C1277B1B5F00449E26 /* SizeModifier.swift */; };
 		73D279C5277B2D1A00449E26 /* DatePickerCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D279C3277B2A3100449E26 /* DatePickerCustom.swift */; };
-		73E8237F277F321200C9B8C2 /* ColumnDaySchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E8237E277F321200C9B8C2 /* ColumnDaySchedule.swift */; };
+		73E8237F277F321200C9B8C2 /* ColumnDayNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E8237E277F321200C9B8C2 /* ColumnDayNotifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +56,7 @@
 		73D279BF27799F4300449E26 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		73D279C1277B1B5F00449E26 /* SizeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeModifier.swift; sourceTree = "<group>"; };
 		73D279C3277B2A3100449E26 /* DatePickerCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCustom.swift; sourceTree = "<group>"; };
-		73E8237E277F321200C9B8C2 /* ColumnDaySchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnDaySchedule.swift; sourceTree = "<group>"; };
+		73E8237E277F321200C9B8C2 /* ColumnDayNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnDayNotifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +157,7 @@
 				73B102542776A6D500B59FDC /* ButtonCreateTask.swift */,
 				739284E5277702BE00CC045A /* SheetAddTask.swift */,
 				739284E92777204700CC045A /* ListItemTask.swift */,
-				73E8237E277F321200C9B8C2 /* ColumnDaySchedule.swift */,
+				73E8237E277F321200C9B8C2 /* ColumnDayNotifications.swift */,
 				73D279C3277B2A3100449E26 /* DatePickerCustom.swift */,
 				73809FFD277B39EE00465CBA /* SheetPageAddTaskNotification.swift */,
 			);
@@ -261,7 +261,7 @@
 				73D279C027799F4300449E26 /* Layout.swift in Sources */,
 				73809FFE277B39EE00465CBA /* SheetPageAddTaskNotification.swift in Sources */,
 				73D279C5277B2D1A00449E26 /* DatePickerCustom.swift in Sources */,
-				73E8237F277F321200C9B8C2 /* ColumnDaySchedule.swift in Sources */,
+				73E8237F277F321200C9B8C2 /* ColumnDayNotifications.swift in Sources */,
 				739284F02778422100CC045A /* NotificationManager.swift in Sources */,
 				739F9A192775F59F0014BD66 /* SettingsScreen.swift in Sources */,
 				739F9A182775F59D0014BD66 /* ScheduleScreen.swift in Sources */,

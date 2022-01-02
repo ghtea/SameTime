@@ -24,8 +24,17 @@ struct SheetAddTask: View {
 
     @State var title: String = ""
     @State var note: String = ""
-    @State var notifications: [TaskNotification] = []
+    @State var notifications: [TaskNotification] = [
+        TaskNotification(id: "ddddfsdgage", title: "dfdfeg", weekday: 1, hour: 13, minute: 30)
+    ]
     @State var defaultTime: Date = Date()
+    @State var isUsingSameTime: Bool = true
+
+    let dayNotifications: ([TaskNotification], Int?) -> [TaskNotification] = { allNotifications, weekday in
+        return allNotifications.filter {
+            $0.weekday == weekday
+        }
+    }
 
     var defaultTimeText: (Date) -> String = { date in
         let calendar = Calendar.current
@@ -47,6 +56,7 @@ struct SheetAddTask: View {
 
                 VStack(alignment: .leading) {
                     Text("Note")
+                        .font(.system(size: 20))
                     TextEditor(text: $note)
                         .frame(height: 80)
                         .padding(4)
@@ -54,24 +64,27 @@ struct SheetAddTask: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
 
                 VStack(alignment: .leading) {
-                    HStack {
-                        Text("Notifications")
-                        Spacer()
-                        NavigationLink(destination: SheetPageAddTaskNotification(selection: $defaultTime)) {
-                            Text("add")
-                        }
-                    }.frame(maxWidth: .infinity)
+                    Text("Notifications")
+                        .font(.system(size: 20))
 
-                    Text("\(defaultTimeText(defaultTime))")
+//                    Text("\(defaultTimeText(defaultTime))")
+//                        .font(.system(size: 20))
+//                        .frame(maxWidth: .infinity)
+//                        .padding(.vertical, 4)
+
+                    DatePicker("default time", selection: $defaultTime, displayedComponents: [.hourAndMinute])
+                        //.labelsHidden()
+                        .frame(maxWidth: .infinity)
+
+                    Toggle("use same time", isOn: $isUsingSameTime)
 
                     ScrollView(.horizontal) {
                         HStack {
-                            ForEach(["all", "MON", "TUE", "WED", "THE", "FRI", "SAT", "SUN"], id: \.self) { item in
-                                ColumnDaySchedule(title: item, notifications: [])
+                            ForEach([nil, 1, 2, 3, 4, 5, 6, 7], id: \.self) { item in
+                                ColumnDayNotifications(weekday: item, notifications: [])
                             }
                         }
                     }
-
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
